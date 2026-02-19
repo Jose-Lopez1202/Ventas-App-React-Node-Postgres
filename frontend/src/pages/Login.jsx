@@ -30,10 +30,11 @@ export default function Login({ onLogin }) {
 <div className="w-full max-w-md bg-slate-900 border border-slate-800 rounded-2xl p-6">
 
       <div className="w-full max-w-md bg-slate-900 border border-slate-800 rounded-2xl p-6">
-        <h1 className="text-2xl font-semibold">Iniciar sesión</h1>
-        <p className="text-slate-400 mt-1">
+        <center><h1 className="text-2xl font-semibold" >Iniciar sesión</h1></center>
+        <img src="Imagenes/cuenta.png" alt="login" className="w-40 h-40 mx-auto mb-6"></img>
+   {/* <p className="text-slate-400 mt-1">
           Ingresa tus credenciales para continuar.
-        </p>
+        </p>*/}
 
         <form onSubmit={submit} className="mt-6 space-y-3">
           <div>
@@ -57,8 +58,9 @@ export default function Login({ onLogin }) {
               onChange={(e) => setPassword(e.target.value)}
               autoComplete="current-password"
             />
+    
           </div>
-
+            <br></br>
           <button
             type="submit"
             className="w-full rounded-xl bg-indigo-600 hover:bg-indigo-500 py-2 font-medium"
@@ -71,10 +73,6 @@ export default function Login({ onLogin }) {
               {error}
             </div>
           )}
-
-          <div className="text-xs text-slate-500">
-            Tip: si no tienes usuario, créalo con el admin (rol admin).
-          </div>
         </form>
       </div>
     </div>

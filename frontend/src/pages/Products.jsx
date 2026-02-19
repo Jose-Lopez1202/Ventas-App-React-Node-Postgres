@@ -22,10 +22,17 @@ export default function Products() {
     })();
   }, []);
 
+
+const productImages = {
+  Teclado: "/Imageness/teclado.png",
+  Mouse: "/Imageness/mouse.png",
+}
+
   return (
     <div className="space-y-4">
       <div className="flex items-end justify-between gap-3">
         <div>
+          <br></br>
           <h1 className="text-2xl font-semibold">Productos</h1>
           <p className="text-slate-400 text-sm">
             Agrega productos al carrito y compra (alerta).
@@ -49,29 +56,40 @@ export default function Products() {
 
       {!loading && !error && (
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {rows.map((p) => (
-            <div
-              key={p.id}
-              className="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col"
-            >
-              <div className="flex items-start justify-between gap-3">
-                <div>
-                  <div className="font-semibold">{p.name}</div>
-                  <div className="text-slate-400 text-sm">
-                    Stock: {p.stock}
-                  </div>
-                </div>
-                <div className="font-semibold">
-                  Q{Number(p.price).toFixed(2)}
-                </div>
-              </div>
+{rows.map((p) => (
+  <div
+    key={p.id}
+    className="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col"
+  >
+  {/* 🔥 IMAGEN */}
+  <div className="w-full h-40 flex items-center justify-center mb-4">
+    <img
+      src={productImages[p.name] || "/Imagenes/default.png"}
+      alt={p.name}
+      className="max-h-36 object-contain"
+    />
+  </div>
 
-              <button
-                className="mt-4 w-full rounded-xl bg-slate-800 hover:bg-slate-700 py-2"
-                onClick={() => addToCart(p)}
-              >
-                Agregar al carrito
-              </button>
+  {/* INFO */}
+  <div className="flex items-start justify-between gap-3">
+    <div>
+      <div className="font-semibold">{p.name}</div>
+      <div className="text-slate-400 text-sm">
+        Stock: {p.stock}
+      </div>
+    </div>
+    <div className="font-semibold">
+      Q{Number(p.price).toFixed(2)}
+    </div>
+  </div>
+
+  <button
+    className="mt-4 w-full rounded-xl bg-slate-800 hover:bg-slate-700 py-2"
+    onClick={() => addToCart(p)}
+  >
+    Agregar al carrito
+  </button>
+
             </div>
           ))}
         </div>

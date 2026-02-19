@@ -30,7 +30,9 @@ export default function AdminCreateUser() {
     }
   };
 
+
   return (
+    <center>
     <div className="max-w-md bg-slate-900 border border-slate-800 rounded-2xl p-6">
       <h2 className="text-xl font-semibold mb-1">Admin · Crear usuario</h2>
       <p className="text-slate-400 mb-6 text-sm">
@@ -39,7 +41,7 @@ export default function AdminCreateUser() {
 
       <form onSubmit={submit} className="space-y-3">
         <div>
-          <label className="text-sm text-slate-300">Nombre</label>
+          <label className="text-sm text-slate-300 block text-left">Nombre</label>
           <input
             className="mt-1 w-full rounded-xl bg-slate-950 border border-slate-800 px-3 py-2 outline-none focus:border-indigo-500"
             placeholder="Jose"
@@ -49,7 +51,7 @@ export default function AdminCreateUser() {
         </div>
 
         <div>
-          <label className="text-sm text-slate-300">Email</label>
+          <label className="text-sm text-slate-300  block text-left">Email</label>
           <input
             className="mt-1 w-full rounded-xl bg-slate-950 border border-slate-800 px-3 py-2 outline-none focus:border-indigo-500"
             placeholder="jose@test.com"
@@ -59,7 +61,7 @@ export default function AdminCreateUser() {
         </div>
 
         <div>
-          <label className="text-sm text-slate-300">Password</label>
+          <label className="text-sm text-slate-300  block text-left">Password</label>
           <input
             className="mt-1 w-full rounded-xl bg-slate-950 border border-slate-800 px-3 py-2 outline-none focus:border-indigo-500"
             placeholder="123456"
@@ -70,7 +72,7 @@ export default function AdminCreateUser() {
         </div>
 
         <div>
-          <label className="text-sm text-slate-300">Rol</label>
+          <label className="text-sm text-slate-300  block text-left">Rol</label>
           <select
             className="mt-1 w-full rounded-xl bg-slate-950 border border-slate-800 px-3 py-2 outline-none focus:border-indigo-500"
             value={form.role}
@@ -98,5 +100,6 @@ export default function AdminCreateUser() {
         )}
       </form>
     </div>
-  );
+</center>
+      );
 }
